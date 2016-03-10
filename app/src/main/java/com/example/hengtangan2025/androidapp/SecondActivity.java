@@ -1,6 +1,7 @@
 package com.example.hengtangan2025.androidapp;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
@@ -21,6 +22,15 @@ public class SecondActivity extends Activity {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.second_layout);
+
+        Button Button1 = (Button) findViewById(R.id.button_1);
+        Button1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(SecondActivity.this, PublishActivity.class);
+                startActivity(intent);
+            }
+        });
 
         Button Button2 = (Button) findViewById(R.id.button_2);
         Button2.setOnClickListener(new View.OnClickListener() {
