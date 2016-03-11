@@ -3,19 +3,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.example.hengtangan2025.androidapp.SecondActivity">
     <item
-        android:id="@+id/menu_add"
+        android:id="@+id/menu_jiuyexinxi"
         android:title="就业信息"
         android:icon="@android:drawable/ic_menu_add"/>
     <item
-        android:id="@+id/menu_wallaper"
+        android:id="@+id/menu_gongyougushi"
         android:title="工友故事"
         android:icon="@android:drawable/ic_menu_gallery"/>
     <item
-        android:id="@+id/menu_search"
+        android:id="@+id/menu_jinengpeixun"
         android:title="技能培训"
         android:icon="@android:drawable/ic_search_category_default"/>
     <item
-        android:id="@+id/menu_setting"
+        android:id="@+id/menu_anquanxinxi"
         android:title="安全信息"
         android:icon="@android:drawable/ic_menu_preferences"/>
 </menu>

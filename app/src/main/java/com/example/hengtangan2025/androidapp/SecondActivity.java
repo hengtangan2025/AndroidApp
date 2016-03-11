@@ -39,6 +39,14 @@ public class SecondActivity extends Activity {
                openOptionsMenu();
             }
         });
+
+        Button Button4 = (Button) findViewById(R.id.button_4);
+        Button4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onBackPressed();
+            }
+        });
     }
 
     @Override
@@ -51,13 +59,13 @@ public class SecondActivity extends Activity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
-            case R.id.menu_add:
+            case R.id.menu_jiuyexinxi:
                 break;
-            case R.id.menu_wallaper:
+            case R.id.menu_gongyougushi:
                 break;
-            case R.id.menu_search:
+            case R.id.menu_jinengpeixun:
                 break;
-            case R.id.menu_setting:
+            case R.id.menu_anquanxinxi:
 //                showSettings();
                 break;
         }
