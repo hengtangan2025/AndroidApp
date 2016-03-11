@@ -38,28 +38,8 @@ public class PublishActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_publish);
-        takePhoto = (Button) findViewById(R.id.take_photo);
         chooseFromAlbum = (Button)findViewById(R.id.choose_from_album);
         picture = (ImageView) findViewById(R.id.picture);
-        takePhoto.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                File outputImage = new File(Environment.getExternalStorageDirectory(),"output_image.jpg");
-                try {
-                    if (outputImage.exists()) {
-                        outputImage.delete();
-                    }
-                    outputImage.createNewFile();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-                imageUri = Uri.fromFile(outputImage);
-                Intent intent = new Intent("com.android.camera.action.IMAGE_CAPTURE");
-                intent.putExtra(MediaStore.EXTRA_OUTPUT, imageUri);
-                startActivityForResult(intent, TAKE_PHOTO);
-            }
-        });
-
         chooseFromAlbum.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -73,15 +53,6 @@ public class PublishActivity extends Activity {
     @Override
     protected void onActivityResult(int requestCode, int resualtCode, Intent data) {
         switch (requestCode) {
-            case TAKE_PHOTO:
-                if (resualtCode == RESULT_OK) {
-                    Intent intent = new Intent ("com.android.camera.action.CROP");
-                    intent.setDataAndType(imageUri, "image/*");
-                    intent.putExtra("scale", true);
-                    intent.putExtra(MediaStore.EXTRA_OUTPUT, imageUri);
-                    startActivityForResult(intent, CROP_PHOTO);
-                }
-                break;
             case CROP_PHOTO:
                 if (resualtCode == RESULT_OK) {
                     try {
