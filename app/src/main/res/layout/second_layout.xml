@@ -1,52 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
+    android:orientation="horizontal"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.hengtangan2025.androidapp.SecondActivity"
     tools:showIn="@layout/second_layout">
 
-    <TextView
-        android:layout_width="150dp"
+    <com.example.hengtangan2025.androidapp.TitleLayout
         android:layout_height="wrap_content"
-        android:id="@+id/testname"
-        android:text="abc"
-        />
+        android:layout_width="match_parent" />
 
-    <TextView
-        android:layout_width="150dp"
+    <ListView
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/testname1"
-        android:text="abc"
+        android:layout_marginTop="40dip"
+        android:id="@+id/listView"
         />
 
     <Button
         android:id="@+id/button_1"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
         android:text="发布信息"
         />
 
     <Button
         android:id="@+id/button_2"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
         android:text="信息分类"
         />
 
     <Button
         android:id="@+id/button_3"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="关于我们"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:text="联系我们"
         />
 
-    <Button
-        android:id="@+id/button_4"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="返回"
-        />
-
-</LinearLayout>
+</RelativeLayout>

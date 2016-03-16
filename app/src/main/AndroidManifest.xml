@@ -40,6 +40,70 @@
             </intent-filter>
         </activity>
 
+        <activity android:name=".JiuyexinxiActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <actegory android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".GongyougushiActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <actegory android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".JinengpeixunActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <actegory android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".AnquanxinxiActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <actegory android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".GuanyuwomenActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <actegory android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".MujuanhuodongActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <actegory android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".CaiwugongkaiActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <actegory android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".MujuanchangyiActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <actegory android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
     </application>
 
 </manifest>

@@ -29,7 +29,6 @@ public class PublishActivity extends Activity {
     public static final int TAKE_PHOTO = 1;
     public static final int CROP_PHOTO = 2;
     public static final int CHOOSE_PHOTO = 3;
-    private Button goBack;
     private Button chooseFromAlbum;
     private ImageView picture;
     private Uri imageUri;
@@ -39,7 +38,6 @@ public class PublishActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_publish);
         chooseFromAlbum = (Button)findViewById(R.id.choose_from_album);
-        goBack = (Button) findViewById(R.id.go_back);
         picture = (ImageView) findViewById(R.id.picture);
         chooseFromAlbum.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -47,13 +45,6 @@ public class PublishActivity extends Activity {
                 Intent intent = new Intent("android.intent.action.GET_CONTENT");
                 intent.setType("image/*");
                 startActivityForResult(intent, CHOOSE_PHOTO);
-            }
-        });
-
-        goBack.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                onBackPressed();
             }
         });
     }

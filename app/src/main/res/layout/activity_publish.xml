@@ -7,17 +7,60 @@
     tools:context="com.example.hengtangan2025.androidapp.PublishActivity"
     tools:showIn="@layout/activity_publish">
 
+    <com.example.hengtangan2025.androidapp.PublishLayout
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent" />
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <AutoCompleteTextView
+            android:id="@+id/email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="输入信息。。。"
+            android:inputType="textEmailAddress"
+            android:maxLines="1"
+            android:singleLine="true"/>
+
+    </android.support.design.widget.TextInputLayout>
+
     <Button
         android:id="@+id/choose_from_album"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="上传图片" />
 
-    <Button
-        android:id="@+id/go_back"
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="返回" />
+        android:text="请选择要发布的信息类型"/>
+
+    <RadioButton
+        android:id="@+id/jiuyexinxi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="就业信息"/>
+
+    <RadioButton
+        android:id="@+id/gongyougushi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="工友故事"/>
+
+    <RadioButton
+        android:id="@+id/jinengpeixun"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="技能培训"/>
+
+    <RadioButton
+        android:id="@+id/anquanxinxi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="安全信息"/>
+
 
     <ImageView
         android:id="@+id/picture"
