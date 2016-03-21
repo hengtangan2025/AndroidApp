@@ -17,7 +17,7 @@ public class PublishLayout extends LinearLayout {
         super(context, attrs);
         LayoutInflater inflater = LayoutInflater.from(context);
         inflater.inflate(R.layout.publish,this);
-        Button titleBack = (Button) findViewById(R.id.publish);
+        Button titleBack = (Button) findViewById(R.id.title_back);
         titleBack.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
