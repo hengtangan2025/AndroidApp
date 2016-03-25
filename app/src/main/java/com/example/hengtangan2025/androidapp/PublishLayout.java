@@ -8,9 +8,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 
+
 /**
- * Created by hengtangan2025 on 2016/3/15.
- */
+ * Created by hengtangan2025 on 2016/3/15*/
 public class PublishLayout extends LinearLayout {
 
     public PublishLayout(Context context, AttributeSet attrs) {
