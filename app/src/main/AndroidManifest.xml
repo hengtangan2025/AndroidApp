@@ -27,7 +27,7 @@
 
         <activity android:name=".SecondActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.SecondActivity_Start" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
@@ -35,7 +35,7 @@
 
         <activity android:name=".PublishActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.PublishActivity_Start" />
 
                 <actegory android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
@@ -43,7 +43,7 @@
 
         <activity android:name=".JiuyexinxiActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.JiuyexinxiActivity_Start" />
 
                 <actegory android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
@@ -51,7 +51,7 @@
 
         <activity android:name=".GongyougushiActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.GongyougushiActivity_Start" />
 
                 <actegory android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
@@ -59,7 +59,7 @@
 
         <activity android:name=".JinengpeixunActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.JinengpeixunActivity_Start" />
 
                 <actegory android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
@@ -67,7 +67,7 @@
 
         <activity android:name=".AnquanxinxiActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.AnquanxinxiActivity_Start" />
 
                 <actegory android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
@@ -75,7 +75,7 @@
 
         <activity android:name=".GuanyuwomenActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.GuanyuwomenActivity_Start" />
 
                 <actegory android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
@@ -83,7 +83,7 @@
 
         <activity android:name=".MujuanhuodongActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.MujuanhuodongActivity_Start" />
 
                 <actegory android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
@@ -91,7 +91,7 @@
 
         <activity android:name=".CaiwugongkaiActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.CaiwugongkaiActivity_Start" />
 
                 <actegory android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
@@ -99,11 +99,24 @@
 
         <activity android:name=".MujuanchangyiActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.MujuanchangyiActivity_Start" />
 
                 <actegory android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity android:name=".InformationShowActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.InformationShowActivity_Start" />
+
+                <actegory android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <!-- ATTENTION: This was auto-generated to add Google Play services to your project for
+             App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information. -->
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
 
     </application>
 

@@ -60,29 +60,39 @@
         android:layout_height="wrap_content"
         android:text="请选择要发布的信息类型"/>
 
-    <RadioButton
-        android:id="@+id/jiuyexinxi"
-        android:layout_width="match_parent"
+    <RadioGroup
+        android:id="@+id/information_types"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="就业信息"/>
+        android:orientation="vertical"
+        android:layout_x="3px"
+        >
 
-    <RadioButton
-        android:id="@+id/gongyougushi"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="工友故事"/>
+        <RadioButton
+            android:id="@+id/jiuyexinxi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="就业信息"/>
 
-    <RadioButton
-        android:id="@+id/jinengpeixun"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="技能培训"/>
+        <RadioButton
+            android:id="@+id/gongyougushi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="工友故事"/>
 
-    <RadioButton
-        android:id="@+id/anquanxinxi"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="安全信息"/>
+        <RadioButton
+            android:id="@+id/jinengpeixun"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="技能培训"/>
+
+        <RadioButton
+            android:id="@+id/anquanxinxi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="安全信息"/>
+
+    </RadioGroup>
 
 
     <ImageView
@@ -91,10 +101,5 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         />
-
-    <TextView
-        android:id="@+id/response_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
 
 </LinearLayout>

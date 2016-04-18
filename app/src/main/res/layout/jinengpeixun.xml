@@ -14,4 +14,17 @@
         android:text="技能培训"
         />
 
+    <ListView
+        android:id="@+id/jinengpeixun_list"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:layout_marginBottom="60dp"
+        />
+
+    <com.example.hengtangan2025.androidapp.BottomButtonsLayout
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_alignParentBottom="true"/>
+
 </LinearLayout>
