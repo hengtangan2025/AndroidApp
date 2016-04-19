@@ -146,32 +146,9 @@ public class PublishActivity extends Activity {
         Information_types.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
-                RadioButton button1 = (RadioButton) findViewById(R.id.jiuyexinxi);
-                int a = button1.getId();
-                System.out.println(a);
-                RadioButton button3 = (RadioButton) findViewById(R.id.gongyougushi);
-                int b = button3.getId();
-                System.out.println(b);
-                RadioButton button2 = (RadioButton) findViewById(R.id.jinengpeixun);
-                int c = button2.getId();
-                System.out.println(c);
-                RadioButton button4 = (RadioButton) findViewById(R.id.anquanxinxi);
-                int d = button4.getId();
-                System.out.println(d);
-                switch (checkedId) {
-                    case 2131492982:
-                        Information_type = "就业信息";
-                        break;
-                    case 2131492983:
-                        Information_type = "工友故事";
-                        break;
-                    case 2131492984:
-                        Information_type = "技能培训";
-                        break;
-                    case 2131492985:
-                        Information_type = "安全信息";
-                        break;
-                }
+                int radioButtonId = group.getCheckedRadioButtonId();
+                RadioButton rb = (RadioButton)PublishActivity.this.findViewById(radioButtonId);
+                Information_type = (String) rb.getText();
             }
         });
 

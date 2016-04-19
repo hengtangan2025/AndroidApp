@@ -3,8 +3,13 @@ package com.example.hengtangan2025.androidapp;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.annotation.TargetApi;
+import android.app.AlertDialog;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.os.Handler;
+import android.os.Message;
 import android.support.annotation.NonNull;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
@@ -29,8 +34,14 @@ import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import org.json.JSONObject;
+
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import static android.Manifest.permission.READ_CONTACTS;
 
@@ -43,6 +54,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
      * Id to identity READ_CONTACTS permission request.
      */
     private static final int REQUEST_READ_CONTACTS = 0;
+    public static final int SHOW_RESPONSE = 0;
 
     /**
      * A dummy authentication store containing known user names and passwords.
@@ -55,12 +67,36 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
      * Keep track of the login task to ensure we can cancel it if requested.
      */
     private UserLoginTask mAuthTask = null;
+    private static final String signin_url = "http://192.168.0.230:3000/users/login_from_app";
+    private static Map<String, String> user_map;
 
     // UI references.
     private AutoCompleteTextView mEmailView;
     private EditText mPasswordView;
     private View mProgressView;
     private View mLoginFormView;
+    private String PhoneNumber;
+    private String Password;
+
+
+    private Handler handler = new Handler() {
+
+        public void handleMessage(Message msg) {
+            switch (msg.what) {
+                case SHOW_RESPONSE:
+                    String info_response = (String) msg.obj;
+                    user_map = getData(info_response);
+                    String user_id = user_map.get("id");
+                    String user_name = user_map.get("name");
+                    Intent intent = new Intent(LoginActivity.this, SecondActivity.class);
+                    intent.putExtra("user_id", user_id);
+                    intent.putExtra("user_name", user_name);
+                    startActivity(intent);
+                    break;
+            }
+        }
+    };
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,6 +107,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         populateAutoComplete();
 
         mPasswordView = (EditText) findViewById(R.id.password);
+
         mPasswordView.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
             public boolean onEditorAction(TextView textView, int id, KeyEvent keyEvent) {
@@ -82,11 +119,23 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             }
         });
 
+
+
         Button mEmailSignInButton = (Button) findViewById(R.id.email_sign_in_button);
         mEmailSignInButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(LoginActivity.this, SecondActivity.class);
+                PhoneNumber = mEmailView.getText().toString();
+                Password = mPasswordView.getText().toString();
+                signin();
+            }
+        });
+
+        Button SignUpButton = (Button) findViewById(R.id.sign_up_button);
+        SignUpButton.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(LoginActivity.this, SignupActivity.class);
                 startActivity(intent);
             }
         });
@@ -94,6 +143,51 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         mLoginFormView = findViewById(R.id.login_form);
         mProgressView = findViewById(R.id.login_progress);
     }
+
+    private void signin() {
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+
+                try {
+                    Map<String, String> params = new HashMap<String, String>();
+                    params.put("account_number", PhoneNumber);
+                    params.put("password", Password);
+                    StringBuilder resualt = HttpUtil.submitPostData(signin_url, params, "UTF-8");
+                    Message message = new Message();
+                    message.what = SHOW_RESPONSE;
+                    message.obj = resualt.toString();
+                    handler.sendMessage(message);
+                } catch (Exception e) {
+                    //返回报错信息
+
+                } finally {
+                    System.out.println("send post request success!");
+                }
+
+            }
+        }).start();
+    }
+
+
+    public Map<String, String> getData(String response) {
+        Map<String,String> info_map = new HashMap<String, String>();
+        try {
+            JSONObject jsonObject = new JSONObject(response);
+            JSONObject a = jsonObject.getJSONObject("id");
+            String user_id = a.getString("$oid");
+            String name = jsonObject.getString("name");
+            String status = jsonObject.getString("status");
+
+            info_map.put("id", user_id);
+            info_map.put("name", name);
+            info_map.put("status", status);
+
+        } catch (Exception e){
+            e.printStackTrace();
+        }
+        return info_map;
+    };
 
     private void populateAutoComplete() {
         if (!mayRequestContacts()) {

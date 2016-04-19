@@ -133,6 +133,8 @@ public class JiuyexinxiActivity extends Activity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 String info_id = info_list.get(position).get("info_id");
+                System.out.println("!!!!!!!!!!!!!!!!");
+                System.out.println(info_id);
                 String get_info = "http://192.168.0.230:3000/informations/" + info_id;
                 sendRequestWithURLConnection(get_info, SHOW_INFORMATION);
             }

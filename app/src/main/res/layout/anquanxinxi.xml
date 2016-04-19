@@ -7,19 +7,10 @@
         android:layout_height="wrap_content"
         android:layout_width="match_parent" />
 
-    <TextView
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:id="@+id/testname"
-        android:text="安全信息"
-        />
-
     <ListView
         android:id="@+id/anquanxinxi_list"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
-        android:layout_marginBottom="60dp"
+        android:layout_height="800px"
         />
 
     <com.example.hengtangan2025.androidapp.BottomButtonsLayout

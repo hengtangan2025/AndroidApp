@@ -122,7 +122,7 @@ public class AnquanxinxiActivity extends Activity{
     @Override
     protected void onCreate(Bundle savedInstaceState) {
         super.onCreate(savedInstaceState);
-        setContentView(R.layout.jiuyexinxi);
+        setContentView(R.layout.anquanxinxi);
 
         sendRequestWithURLConnection(get_all, SHOW_RESPONSE);
 

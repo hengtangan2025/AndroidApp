@@ -39,13 +39,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <EditText
-            android:id="@+id/information_content"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="输入信息。。。"
-            android:maxLines="10"
-            android:singleLine="true"/>
+    <EditText
+        android:id="@+id/information_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="输入信息。。。"
+        android:maxLines="10"
+        android:singleLine="true"/>
 
     </android.support.design.widget.TextInputLayout>
 
